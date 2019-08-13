@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:elevation="7dp"
         app:cardCornerRadius="10dp"
-        android:layout_margin="10dp">
+        android:layout_margin="20dp"
+        >
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -24,7 +25,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
                 android:id="@+id/imagess"
-                android:layout_margin="5dp"/>
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginBottom="10dp"/>
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -58,18 +62,7 @@
 
 
 
-<!--
-            <com.like.LikeButton
-                app:icon_type="heart"
-                app:icon_size="23dp"
-                android:id="@+id/star_button"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/imagess"
-                android:paddingBottom="10dp"
-                android:layout_alignParentRight="true"
-                android:layout_above="@+id/discription"
-                android:layout_marginRight="20dp"/>-->
+
 
 
 

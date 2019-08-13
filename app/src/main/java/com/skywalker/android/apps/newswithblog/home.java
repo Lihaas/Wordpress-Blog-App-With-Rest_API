@@ -11,6 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ProgressBar;
+
 import com.android.volley.TimeoutError;
 
 import com.android.volley.RequestQueue;
@@ -31,12 +33,13 @@ import java.util.List;
  * A simple {@link Fragment} subclass.
  */
 public class home extends Fragment {
-    RecyclerView.Adapter adapters;
-    RecyclerView recyclerView;
-    List<Posts> newsList = new ArrayList<>();
-    String URL_DATA;
-    RequestQueue reqQue;
-    long id;
+    private RecyclerView.Adapter adapters;
+    private  RecyclerView recyclerView;
+    private  List<Posts> newsList = new ArrayList<>();
+    private String URL_DATA;
+    private RequestQueue reqQue;
+    private  long id;
+
 
     public home() {
         // Required empty public constructor
@@ -73,6 +76,7 @@ public class home extends Fragment {
         JsonArrayRequest stringRequest = new JsonArrayRequest(URL_DATA, new Response.Listener<JSONArray>() {
             @Override
             public void onResponse(JSONArray response) {
+
                 getValue(response);
 
             }
@@ -111,20 +115,14 @@ public class home extends Fragment {
 
 
 
-                /*String email = json.getString("EmailID");
-                String phoneNo = json.getString("Mobile");
-                String imgUrl = json.getString("ImageURL");*/
 
-                // userList.setName(json.getString("Name"));
-               /* userList.setEmailID(email);
-                userList.setMobile(phoneNo);
-                userList.setImageURL(imgUrl);*/
 
 
             } catch (Exception e) {
             }
             newsList.add(userList);
         }
+
 
         adapters = new NewsAdapter(newsList, getActivity());
         recyclerView.setAdapter(adapters);
@@ -139,7 +137,7 @@ public class home extends Fragment {
             id = (long) getActivity().getIntent().getLongExtra("idss",410);
             URL_DATA = "https://www.simplifiedcoding.net/wp-json/wp/v2/posts?categories=" + id;
         }
-           // id = getActivity().getIntent().getExtras().getString("id");
+
 
 
 

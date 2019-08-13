@@ -9,6 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.MenuItem;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
@@ -45,9 +46,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.search:
                     fragment = new search();
                     break;
-                case R.id.profile:
-                    fragment = new profile();
-                   break;
+
             }
             return loadFarg(fragment);
         }
@@ -58,6 +57,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         BottomNavigationView navView = findViewById(R.id.nav_view);
+
 
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
         loadFarg(new home());
